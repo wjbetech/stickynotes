@@ -1,8 +1,23 @@
-export const NoteCard = ({ note }) => {
-  // handle position, colors, body
-  let position: note.position;
-  const colors = JSON.parse(note.colors);
-  const body = JSON.parse(note.body);
+interface Note {
+  colors: {
+    colorBody: string;
+    colorHeader: string;
+    colorText: string;
+  };
+  position: {
+    x: number;
+    y: number;
+  };
+  body: string;
+}
+
+interface NoteProps {
+  note: Note;
+}
+
+export const NoteCard: React.FC<NoteProps> = ({ note }) => {
+  // destructure notes
+  const { colors, body } = note;
 
   return (
     // card
