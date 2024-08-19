@@ -24,8 +24,8 @@ export const NoteCard: React.FC<NoteProps> = ({ note }) => {
 
   // setup useState /w useRef for handling x and y coords of cards
   const [position, setPosition] = useState(note.position);
-  const initialMousePos = { x: 0, y: 0 };
   const cardPositionRef = useRef<HTMLDivElement>(null);
+  const initialMousePos = { x: 0, y: 0 };
 
   // capture mouse down event and initiate movement
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
